@@ -13,7 +13,7 @@ const Form = () => {
     setTodo(e.target.value);
   };
 
-  const onChangeReminder = (e) => {
+  const onChangeReminder = () => {
     setReminder(!reminder);
   };
 

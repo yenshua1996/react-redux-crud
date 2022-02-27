@@ -9,6 +9,16 @@ const appReducer = (state = [], action) => {
     return [...state, action.payload];
   }
 
+  if (action.type === "DELETE_TODO") {
+    return state.filter((item) => item.id !== action.payload);
+  }
+
+  if (action.type === "UPDATE_REMINDER") {
+    return state.map((item) =>
+      item.id === action.payload ? { ...item, reminder: !item.reminder } : item
+    );
+  }
+
   return state;
 };
 
